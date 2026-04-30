@@ -1,0 +1,21 @@
+name: CI simple
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Récupérer le code
+      uses: actions/checkout@v3
+
+    - name: Installer Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Exécuter le programme
+      run: node app.js

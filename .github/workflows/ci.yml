@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,5 +17,8 @@ jobs:
       with:
         node-version: '18'
 
-    - name: Exécuter le programme
-      run: node app.js
+    - name: Installer dépendances
+      run: npm install
+
+    - name: Lancer les tests
+      run: npm test
